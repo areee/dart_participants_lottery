@@ -1,21 +1,31 @@
 import 'dart:math';
 
 void main(List<String> arguments) {
-  // names list
-  var names = 'Mike, Helen, Terry, Catherine, Max';
+  var result = _runLottery('Mike, Helen, Terry, Catherine, Max');
+  print(result);
+}
+
+// Lottery function
+String _runLottery(String names) {
   var namesList = names.split(', ');
-  print(namesList);
 
-  // reordered list
-  var orderedList = <String>[];
+  var reOrderedList = <int>[];
 
-  orderedList.add('test 1');
-  orderedList.add('test 2');
-  print(orderedList);
-
-  // random numbers
   var random = Random();
-  for (var i = 0; i < namesList.length; i++) {
-    print(random.nextInt(namesList.length));
+
+  while (reOrderedList.length != namesList.length) {
+    var randomNumber = random.nextInt(namesList.length);
+
+    if (!reOrderedList.contains(randomNumber)) {
+      reOrderedList.add(randomNumber);
+    }
   }
+
+  var returnedString = '';
+
+  for (var i in reOrderedList) {
+    returnedString = '$returnedString ${namesList[i]}';
+  }
+
+  return returnedString;
 }
