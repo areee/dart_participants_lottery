@@ -7,7 +7,7 @@ void main(List<String> arguments) {
 
 // Lottery function
 String _runLottery(String names) {
-  var namesList = names.split(', ');
+  var namesList = names.split(',');
 
   var reOrderedList = <int>[];
 
@@ -23,9 +23,13 @@ String _runLottery(String names) {
 
   var returnedString = '';
 
-  for (var i in reOrderedList) {
-    returnedString = '$returnedString ${namesList[i]}';
+  for (var i = 0; i < reOrderedList.length; i++) {
+    if (i == 0) {
+      returnedString = '${namesList[i]}';
+    } else {
+      returnedString = '$returnedString, ${namesList[i]}';
+    }
   }
 
-  return returnedString;
+  return returnedString.replaceAll('  ', ' ');
 }
