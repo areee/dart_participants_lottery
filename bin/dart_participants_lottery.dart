@@ -1,35 +1,22 @@
-import 'dart:math';
+import 'dart:io';
+import 'package:dart_participants_lottery/lottery_logic.dart' as lottery;
 
-void main(List<String> arguments) {
-  var result = _runLottery('Mike, Helen, Terry, Catherine, Max');
-  print(result);
-}
+void main() {
+  print('Add lottery names, -1 stops:');
 
-// Lottery function
-String _runLottery(String names) {
-  var namesList = names.split(',');
+  var namesList = <String>[];
 
-  var reOrderedList = <int>[];
+  while (true) {
+    final input = stdin.readLineSync();
 
-  var random = Random();
-
-  while (reOrderedList.length != namesList.length) {
-    var randomNumber = random.nextInt(namesList.length);
-
-    if (!reOrderedList.contains(randomNumber)) {
-      reOrderedList.add(randomNumber);
+    if (input == null) {
+      break;
     }
-  }
 
-  var returnedString = '';
-
-  for (var i = 0; i < reOrderedList.length; i++) {
-    if (i == 0) {
-      returnedString = '${namesList[i]}';
-    } else {
-      returnedString = '$returnedString, ${namesList[i]}';
+    if (input == '-1') {
+      break;
     }
+    namesList.add(input);
   }
-
-  return returnedString.replaceAll('  ', ' ');
+  print(lottery.runLotteryList(namesList));
 }

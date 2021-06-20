@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dart_participants_lottery",
+            "request": "launch",
+            "type": "dart",
+            "console": "terminal"
+        }
+    ]
+}
