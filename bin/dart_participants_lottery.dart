@@ -1,11 +1,22 @@
 import 'dart:io';
 import 'package:dart_participants_lottery/lottery_logic.dart' as lottery;
 
-void main(/*List<String> arguments*/) {
-  stdout.writeln('Type something');
-  final input = stdin.readLineSync();
-  stdout.writeln('You typed: $input');
+void main() {
+  print('Add lottery names, -1 stops:');
 
-  // var result = lottery.runLottery('Mike, Helen, Terry, Catherine, Max');
-  // print(result);
+  var namesList = <String>[];
+
+  while (true) {
+    final input = stdin.readLineSync();
+
+    if (input == null) {
+      break;
+    }
+
+    if (input == '-1') {
+      break;
+    }
+    namesList.add(input);
+  }
+  print(lottery.runLotteryList(namesList));
 }

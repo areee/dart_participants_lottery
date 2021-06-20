@@ -1,14 +1,16 @@
 import 'dart:math';
 
 String runLottery(String names) {
-  var namesList = names.split(',');
+  return runLotteryList(names.split(','));
+}
 
+String runLotteryList(List<String> names) {
   var reOrderedList = <int>[];
 
   var random = Random();
 
-  while (reOrderedList.length != namesList.length) {
-    var randomNumber = random.nextInt(namesList.length);
+  while (reOrderedList.length != names.length) {
+    var randomNumber = random.nextInt(names.length);
 
     if (!reOrderedList.contains(randomNumber)) {
       reOrderedList.add(randomNumber);
@@ -19,11 +21,10 @@ String runLottery(String names) {
 
   for (var i = 0; i < reOrderedList.length; i++) {
     if (i == 0) {
-      returnedString = '${namesList[i]}';
+      returnedString = '${names[reOrderedList[i]]}';
     } else {
-      returnedString = '$returnedString, ${namesList[i]}';
+      returnedString = '$returnedString, ${names[reOrderedList[i]]}';
     }
   }
-
   return returnedString.replaceAll('  ', ' ');
 }
