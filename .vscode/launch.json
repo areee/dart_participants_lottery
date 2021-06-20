@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Dart",
+            "request": "launch",
+            "type": "dart",
+            "console": "terminal"
+        }
+    ]
+}
