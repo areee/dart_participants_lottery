@@ -6,8 +6,9 @@
     - VS Code's launch configuration,
     - readme file,
     - enhance the main logic (simplify & refactor),
-    - add String extension and
-    - add some basic tests for methods.
+    - add String extension,
+    - add some basic tests for methods and
+    - add Dart CI including test coverage (and uploading to Codecov).
 
 # 1.0.0
 
