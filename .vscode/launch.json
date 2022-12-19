@@ -2,11 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "dart_participants_lottery",
+            "name": "Current File",
             "program": "bin/dart_participants_lottery.dart",
             "request": "launch",
             "type": "dart",
-            "console": "terminal"
+            "console": "terminal",
+            "codeLens": {
+                "for": [
+                    "run-file",
+                    "debug-file"
+                ],
+                "title": "${debugType}"
+            }
         }
     ]
 }
