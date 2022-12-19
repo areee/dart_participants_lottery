@@ -7,8 +7,9 @@
     - readme file,
     - enhance the main logic (simplify & refactor),
     - add String extension,
-    - add some basic tests for methods and
-    - add Dart CI including test coverage (and uploading to Codecov).
+    - add some basic tests for methods,
+    - add Dart CI including test coverage (and uploading to Codecov) and
+    - add license.
 
 # 1.0.0
 
